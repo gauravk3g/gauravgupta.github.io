@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amazon AI Recruiting Tool Bias (2018) — Case Analysis</title>
+  <style>
+    :root{
+      --bg:#0b0f14; --panel:#121821; --ink:#e6edf3; --muted:#9fb0c3; --accent:#7c9cff; --line:#1e2633; --card:#0f141b; --ok:#9de39a; --warn:#ffd38a;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color:var(--ink); background:radial-gradient(1200px 800px at 10% -10%, #1a2332 0%, #0b0f14 50%), var(--bg); line-height:1.6; letter-spacing:.2px}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px; margin:0 auto; padding:32px 20px 64px}
+    header{display:flex; align-items:flex-start; justify-content:space-between; gap:16px; margin-bottom:24px}
+    .title{font-size:clamp(28px, 4vw, 42px); margin:0; line-height:1.15}
+    .subtitle{margin:6px 0 0; color:var(--muted); font-size:clamp(14px, 2.2vw, 16px)}
+    .grid{display:grid; grid-template-columns:1.1fr .9fr; gap:22px}
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); border:1px solid var(--line); border-radius:var(--radius); box-shadow:0 8px 32px rgba(0,0,0,.25); overflow:hidden}
+    .card > .hd{display:flex; align-items:center; justify-content:space-between; padding:16px 18px; border-bottom:1px solid var(--line); background:linear-gradient(180deg, rgba(124,156,255,.12), rgba(124,156,255,0))}
+    .card > .hd h2{margin:0; font-size:18px; letter-spacing:.3px}
+    .card .bd{padding:18px}
+    .pill{display:inline-flex; gap:8px; align-items:center; background:#0a1220; border:1px solid var(--line); padding:8px 12px; border-radius:999px; color:var(--muted); font-size:12px}
+    .kpi{display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-top:12px}
+    .kpi .item{padding:12px; border:1px dashed var(--line); border-radius:12px; background:var(--card); text-align:center}
+    .kpi .item .k{display:block; font-weight:700; font-size:18px}
+    .kpi .item .v{display:block; color:var(--muted); font-size:12px}
+    figure{margin:0; border-top:1px solid var(--line); background:var(--card)}
+    figure img{display:block; width:100%; height:auto; object-fit:cover}
+    figcaption{padding:10px 14px; color:var(--muted); font-size:12px; border-top:1px solid var(--line)}
+    ul, ol{padding-left:18px; margin:8px 0}
+    .two-col{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    @media (max-width: 640px){ .two-col{grid-template-columns:1fr} }
+    .taglist{display:flex; flex-wrap:wrap; gap:8px}
+    .tag{padding:6px 10px; border-radius:999px; border:1px solid var(--line); background:#0e1520; color:var(--muted); font-size:12px}
+    footer{margin-top:28px; color:var(--muted); font-size:12px; text-align:center}
+    .callout{border-left:4px solid var(--warn); background:rgba(255,211,138,.1); padding:10px 12px; border-radius:8px}
+    .ok{color:var(--ok)}
+    @media print{body{background:#fff; color:#000} .card, .pill{border-color:#bbb; background:#fff; box-shadow:none} a{color:#0645ad}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1 class="title">Amazon AI Recruiting Tool Bias (2018) — Case Analysis</h1>
+        <p class="subtitle">Analysis of Amazon’s experimental résumé‑screening model that exhibited gender bias and the lessons for ethical AI development.</p>
+      </div>
+      <span class="pill">Last updated: <time>Aug 19, 2025</time></span>
+    </header>
+
+    <section class="grid">
+      <!-- LEFT: Introduction -->
+      <article class="card">
+        <div class="hd"><h2>Introduction</h2></div>
+        <div class="bd">
+          In 2018, Amazon discontinued an experimental AI tool designed to score job applicants when it became clear the model learned to disadvantage women. This page summarizes the incident and presents my ethical analysis, reflections, and recommendations for building fairer hiring systems.
+		  <img src="AI2.png" alt="Illustrative screenshot or cover for the case analysis" style="width:500px; height:auto;"/>
+          <figcaption>Lack of Transparency and Explainability.</figcaption>
+        </div>
+      </article>
+
+      <!-- RIGHT: Actual Artifact -->
+      <aside class="card">
+        <div class="hd"><h2>Actual Artifact</h2></div>
+        <div class="bd">
+          <div class="two-col">
+            <div>
+              <p><strong>Links</strong></p>
+              <ul>
+                <li><a href="#" target="_blank" rel="noopener">Case Analysis</a></li>
+                <li><a href="Incident.docx" target="_blank" rel="noopener">Download DOC</a></li>
+               <!-- <li><a href="#" target="_blank" rel="noopener">Slide Deck (optional)</a></li> -->
+              </ul>
+            </div>
+            <div>
+              <p><strong>Quick Facts</strong></p>
+              <div class="kpi">
+                <div class="item"><span class="k">2018</span><span class="v">Incident year</span></div>
+                <div class="item"><span class="k">Analyst</span><span class="v">Role</span></div>
+                <div class="item"><span class="k">Solo</span><span class="v">Work style</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <figure>
+          <img src="AI1.png" alt="Illustrative screenshot or cover for the case analysis" style="width:400px; height:auto;"/>
+          <figcaption>Data Bias and Illustration.</figcaption>
+        </figure>
+      </aside>
+    </section>
+
+    <section class="grid" style="margin-top:22px">
+      <article class="card">
+        <div class="hd"><h2>Description of the Artifact</h2></div>
+        <div class="bd">
+          A concise case study that explains what happened in Amazon’s AI recruiting pilot, why bias emerged, and how similar issues can be prevented. It includes a summary of events, three ethical issues with rationale, proposed mitigations, and a personal reflection on critical thinking.
+        </div>
+      </article>
+      <article class="card">
+        <div class="hd"><h2>Objective — Why did you create it?</h2></div>
+        <div class="bd">
+          To practice applying AI ethics frameworks to a real incident, demonstrate skill in communicating complex socio‑technical risks, and propose actionable safeguards for ML systems used in high‑stakes decisions like hiring.
+        </div>
+      </article>
+    </section>
+
+    <section class="card" style="margin-top:22px">
+      <div class="hd"><h2>Critical Analysis</h2></div>
+      <div class="bd">
+        <h3 style="margin:0 0 6px">Ethical Issue 1 — Data Bias & Representation</h3>
+        <div class="callout">
+          <p><strong>Why I chose this:</strong> The model learned from ~10 years of résumés dominated by men, replicating historical imbalance. Unfair inputs drove unfair outputs.</p>
+          <p><strong>Thought process:</strong> Models mirror their data. When women are under‑represented, the system generalizes that pattern, sometimes via proxies (e.g., terms like “women’s” or all‑women’s colleges).</p>
+          <p><strong>Solution:</strong> Build balanced, representative datasets. Where gaps exist, use careful data curation, augmentation, or re‑weighting. Validate with stratified performance and bias audits before training and release.</p>
+        </div>
+        <h3 style="margin:18px 0 6px">Ethical Issue 2 — Lack of Transparency & Explainability</h3>
+        <div class="callout">
+          <p><strong>Why I chose this:</strong> A black‑box system makes it hard to detect biased patterns or provide reasons for decisions, undermining trust and accountability.</p>
+          <p><strong>Thought process:</strong> Applicants deserve to know why they were screened in or out. Without interpretable signals, teams can’t diagnose harmful behavior early.</p>
+          <p><strong>Solution:</strong> Prefer interpretable models or apply post‑hoc explainability with care. Establish recurring fairness reviews with feature importance monitoring, documented model cards, and decision logs.</p>
+        </div>
+        <h3 style="margin:18px 0 6px">Ethical Issue 3 — Insufficient Human Oversight</h3>
+        <div class="callout">
+          <p><strong>Why I chose this:</strong> The prototype advanced far despite issues, highlighting the need for robust governance when systems affect people’s livelihoods.</p>
+          <p><strong>Thought process:</strong> AI is fast but not wise. Human reviewers can catch nuance (context, potential, non‑linear career paths) that models miss.</p>
+          <p><strong>Solution:</strong> Keep humans in the loop for consequential decisions. Use AI to assist—not replace—final hiring judgments. Implement approval gates, red‑team testing, and rollback plans.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:22px">
+      <div class="hd"><h2>Process — How I made it</h2></div>
+      <div class="bd">
+        <ol>
+          <li><strong>Discovery:</strong> Reviewed public reporting on the 2018 incident and common bias mechanisms in NLP screening.</li>
+          <li><strong>Framing:</strong> Defined stakeholders (applicants, recruiters, legal/compliance, leadership) and potential harms.</li>
+          <li><strong>Analysis:</strong> Mapped issues to data, model, and governance layers; identified likely proxies and failure modes.</li>
+          <li><strong>Mitigations:</strong> Outlined dataset balancing, feature governance, interpretable modeling, and human‑in‑the‑loop controls.</li>
+          <li><strong>Reflection:</strong> Documented learning on separating code defects from systemic data bias.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="grid" style="margin-top:22px">
+      <article class="card">
+        <div class="hd"><h2>Tools & Technologies</h2></div>
+        <div class="bd">
+          <div class="taglist">
+            <span class="tag">Case study method</span>
+            <span class="tag">AI ethics frameworks</span>
+            <span class="tag">NLP concepts</span>
+            <span class="tag">Fairness metrics</span>
+            <span class="tag">Model cards</span>
+			
+          </div>
+		   <img src="AI3.png" alt="Illustrative screenshot or cover for the case analysis" style="width:300px; height:auto;"/>
+          <figcaption>Inadequate Human Error.</figcaption>
+        </div>
+      </article>
+      <article class="card">
+        <div class="hd"><h2>Value Proposition</h2></div>
+        <div class="bd">
+          <div class="two-col">
+            <div>
+              <h3 style="margin:0 0 6px">Unique Value</h3>
+              <p>Connects a well‑known incident to concrete, implementable safeguards (data balancing, proxy checks, governance), bridging ethics principles to engineering practice.</p>
+            </div>
+            <div>
+              <h3 style="margin:0 0 6px">Relevance</h3>
+              <p>Hiring is a high‑impact domain with regulatory and reputational risk. This analysis demonstrates my ability to anticipate harms and design control plans for real‑world ML systems.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="card" style="margin-top:22px">
+      <div class="hd"><h2>Reflection on Critical Thinking</h2></div>
+      <div class="bd">
+        <p>I initially treated the problem as a fixable coding issue. Closer review showed the root cause was historical data imbalance: the model learned past human decisions and reproduced them. Building fair systems requires more than technical accuracy; it requires deliberate attention to representation, governance, and continuous bias monitoring. Going forward, I will prioritize rigorous data ethics reviews and ongoing fairness checks from project kickoff through post‑deployment monitoring.</p>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:22px">
+      <div class="hd"><h2>References</h2></div>
+      <div class="bd">
+        <ul>
+          <li>News reporting on Amazon’s 2018 résumé‑screening pilot <a href="https://www.reuters.com/article/world/insight-amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK0AG/" target="_blank">Article on Amazon screening</a> </li>
+          <li>Mitchell et al., "Model Cards for Model Reporting" <a href="https://dl.acm.org/doi/10.1145/3287560.3287596" target="_blank">Article</a> </li>
+          <li>Barocas, Hardt, & Narayanan, <em>Fairness and Machine Learning</em> <a href="https://fairmlbook.org/" target="_blank">Book</a> </li>
+          <li>CRISP‑DM process model <a href="https://www.datascience-pm.com/crisp-dm-2/" target="_blank">Article</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>Created by Gaurav Gupta.</p>
+    </footer>
+  </div>
+</body>
+</html>
