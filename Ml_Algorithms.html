@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machine Learning Algorithms Portfolio Artifact</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin:0;
+background:linear-gradient(120deg,#eef2ff,#fdf2f8);
+color:#333;
+}
+
+nav{
+background:#111827;
+color:white;
+padding:12px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+color:white;
+margin-left:18px;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{color:#60a5fa}
+
+header{
+background:linear-gradient(90deg,#6366f1,#ec4899);
+color:white;
+padding:70px 20px;
+text-align:center;
+}
+
+header h1{margin:0;font-size:40px}
+header p{margin-top:10px;font-size:18px}
+
+section{
+max-width:1100px;
+margin:auto;
+padding:45px 20px;
+}
+
+h2{margin-top:0}
+
+.card{
+background:white;
+padding:24px;
+border-radius:14px;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
+margin-top:20px;
+line-height:1.7;
+}
+
+.grid{
+margin-top:25px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+}
+
+.algorithm{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 14px rgba(0,0,0,0.08);
+}
+
+.icon{font-size:24px;color:#6366f1;margin-bottom:8px}
+
+.tag{
+display:inline-block;
+padding:4px 8px;
+border-radius:6px;
+font-size:12px;
+margin-right:5px;
+margin-bottom:8px;
+color:white;
+}
+
+.supervised{background:#3b82f6}
+.unsupervised{background:#10b981}
+.deep{background:#f59e0b}
+.generative{background:#ec4899}
+.domain{background:#6366f1}
+
+.list{
+margin-top:10px;
+}
+
+.list li{margin-bottom:8px}
+
+footer{
+margin-top:40px;
+padding:25px;
+text-align:center;
+background:#111827;
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div><b>AI Portfolio</b></div>
+<div>
+<a href="#introduction">Introduction</a>
+<a href="#description">Description</a>
+<a href="#objective">Objective</a>
+<a href="#process">Process</a>
+<a href="#tools">Tools</a>
+<a href="#value">Value</a>
+<a href="#relevance">Relevance</a>
+</div>
+</nav>
+
+<header>
+<h1>Machine Learning Algorithms and AI Domains</h1>
+<p>Portfolio Artifact Demonstrating Understanding of AI / ML Models</p>
+</header>
+
+<section id="introduction">
+<div class="card">
+<h2>Introduction</h2>
+<p>
+Artificial Intelligence and Machine Learning have become essential technologies in modern computing. Many systems today rely on machine learning algorithms to analyze data, identify patterns, and make predictions. These algorithms are used in a wide range of domains including finance, healthcare, marketing, language processing, and computer vision.
+</p>
+
+<p>
+This portfolio artifact presents an overview of several commonly used machine learning algorithms and explains how they relate to major AI domains such as tabular data analysis, computer vision, natural language processing, and generative AI.
+</p>
+</div>
+</section>
+
+<section id="description">
+<div class="card">
+<h2>Description</h2>
+<p>
+Machine learning algorithms can generally be categorized based on how they learn from data. Supervised learning algorithms learn from labeled datasets and are commonly used for prediction and classification tasks. Unsupervised learning algorithms work with unlabeled data and focus on discovering patterns or groupings within the dataset.
+</p>
+
+<p>
+In addition to learning style, algorithms are often associated with particular application domains. For example, decision trees and random forests are commonly used with structured tabular datasets, while convolutional neural networks are widely used for computer vision tasks. Transformer-based models are frequently used in natural language processing applications, and generative models such as GANs and diffusion models are used to create new content.
+</p>
+</div>
+</section>
+
+<section id="objective">
+<div class="card">
+<h2>Objective</h2>
+<ul class="list">
+<li>Identify and categorize important machine learning algorithms.</li>
+<li>Understand how different algorithms relate to AI domains.</li>
+<li>Provide simple explanations of how each algorithm works.</li>
+<li>Illustrate real-world examples of how these algorithms are applied.</li>
+<li>Create a visual and organized artifact suitable for a professional portfolio.</li>
+</ul>
+</div>
+</section>
+
+<section id="process">
+
+<h2>Process</h2>
+
+<div class="grid">
+
+<div class="algorithm">
+<i class="fa-solid fa-diagram-project icon"></i>
+<h3>Decision Tree</h3>
+<span class="tag supervised">Supervised</span>
+<span class="tag domain">Tabular Data</span>
+<p>Splits data into branches based on feature values to reach a decision.</p>
+</div>
+
+<div class="algorithm">
+<i class="fa-solid fa-tree icon"></i>
+<h3>Random Forest</h3>
+<span class="tag supervised">Supervised</span>
+<span class="tag domain">Tabular Data</span>
+<p>Combines multiple decision trees to improve prediction accuracy.</p>
+</div>
+
+<div class="algorithm">
+<i class="fa-solid fa-chart-line icon"></i>
+<h3>Linear Regression</h3>
+<span class="tag supervised">Supervised</span>
+<p>Finds relationships between variables and predicts continuous values.</p>
+</div>
+
+<div class="algorithm">
+<i class="fa-solid fa-border-all icon"></i>
+<h3>Support Vector Machine</h3>
+<span class="tag supervised">Supervised</span>
+<p>Separates data into classes using an optimal boundary.</p>
+</div>
+
+<div class="algorithm">
+<i class="fa-solid fa-object-group icon"></i>
+<h3>K-Means Clustering</h3>
+<span class="tag unsupervised">Unsupervised</span>
+<p>Groups similar data points into clusters.</p>
+</div>
+
+<div class="algorithm">
+<i class="fa-solid fa-compress icon"></i>
+<h3>Principal Component Analysis</h3>
+<span class="tag unsupervised">Unsupervised</span>
+<p>Reduces the number of features in a dataset while retaining key information.</p>
+</div>
+
+<div class="algorithm">
+<i class="fa-solid fa-camera icon"></i>
+<h3>Convolutional Neural Network</h3>
+<span class="tag deep">Deep Learning</span>
+<span class="tag domain">Computer Vision</span>
+<p>Analyzes images by detecting patterns like shapes and textures.</p>
+</div>
+
+<div class="algorithm">
+<i class="fa-solid fa-comments icon"></i>
+<h3>Transformer Models</h3>
+<span class="tag deep">Deep Learning</span>
+<span class="tag domain">NLP</span>
+<p>Uses attention mechanisms to understand language context.</p>
+</div>
+
+<div class="algorithm">
+<i class="fa-solid fa-palette icon"></i>
+<h3>Generative Adversarial Networks</h3>
+<span class="tag generative">Generative AI</span>
+<p>Two neural networks compete to generate realistic synthetic data.</p>
+</div>
+
+<div class="algorithm">
+<i class="fa-solid fa-wand-magic icon"></i>
+<h3>Diffusion Models</h3>
+<span class="tag generative">Generative AI</span>
+<p>Gradually removes noise to generate new images.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="tools">
+<div class="card">
+<h2>Tools and Technologies Used</h2>
+<ul class="list">
+<li>HTML for structuring the webpage</li>
+<li>CSS for styling and layout design</li>
+<li>Font Awesome icons for visual elements</li>
+<li>Web browser for viewing and testing the portfolio page</li>
+<li>Research resources on AI and machine learning concepts</li>
+</ul>
+</div>
+</section>
+
+<section id="value">
+<div class="card">
+<h2>Value Proposition</h2>
+<p>
+This artifact demonstrates the ability to organize complex technical information in a clear and structured format. By presenting machine learning algorithms alongside their application domains and explanations, the artifact highlights an understanding of both theoretical concepts and practical AI applications.
+</p>
+
+<h3>Unique Value</h3>
+<p>
+The project combines technical explanations with visual presentation. Instead of only listing algorithms, it connects them to real-world domains and provides a structured learning framework that makes the information easier to understand.
+</p>
+</div>
+</section>
+
+<section id="relevance">
+<div class="card">
+<h2>Relevance</h2>
+<p>
+Understanding machine learning algorithms and their application areas is important for anyone studying artificial intelligence, data science, or analytics. This artifact demonstrates foundational knowledge of AI technologies and shows the ability to communicate technical topics effectively. Such skills are valuable for academic learning as well as future professional roles in AI-related fields.
+</p>
+</div>
+</section>
+
+<section>
+<div class="card">
+<h2>References</h2>
+<ul class="list">
+<li>General resources on Artificial Intelligence and Machine Learning</li>
+<li>Educational articles explaining AI, ML, Deep Learning, and Generative AI</li>
+<li>Online documentation describing common machine learning algorithms</li>
+</ul>
+</div>
+</section>
+
+<footer>
+<p>Machine Learning Portfolio Artifact by Gaurav Gupta</p>
+</footer>
+
+</body>
+</html>
