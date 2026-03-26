@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Generative AI Training Process | Interactive Infographic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root {
+    --bg: #f4f6f9;
+    --text: #333;
+    --card: #ffffff;
+}
+
+body.dark {
+    --bg: #1e1e2f;
+    --text: #f5f5f5;
+    --card: #2a2a40;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+header {
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px;
+}
+
+.card {
+    background: var(--card);
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px;
+}
+
+.pipeline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.step {
+    background: #4ca1af;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.step:hover {
+    background: #2c3e50;
+}
+
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4ca1af;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+</style>
+</head>
+
+<body>
+
+<button class="toggle-btn" onclick="toggleMode()">🌙 Toggle Mode</button>
+
+<header>
+    <h1>Understanding How Generative AI Models Are Trained</h1>
+    <p>An Interactive Exploration of LLM Training, Resources, and Real-World Costs</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Introduction</h2>
+<p>
+When I first started exploring generative AI, what stood out to me was not just how powerful these systems are, 
+but how much effort goes into building them. Models like GPT, Claude, and LLaMA don’t simply “learn overnight.” 
+They are trained on enormous amounts of data using highly advanced infrastructure.
+</p>
+<p>
+This project is my attempt to break down that complex process into something more approachable. Instead of focusing 
+only on technical jargon, I wanted to show the full journey—from raw data to a working AI system—in a way that feels 
+clear, practical, and meaningful.
+</p>
+</div>
+
+<div class="card">
+<h2>Description of the Artifact</h2>
+<p>
+This interactive infographic walks through the lifecycle of a large language model. It highlights each major stage 
+in the training pipeline, explains the resources involved, and provides real-world context around cost and scale. 
+The goal is to help bridge the gap between theory and real-world implementation.
+</p>
+</div>
+
+<div class="card">
+<h2>Objective</h2>
+<p>
+The main goal of this work is to better understand how generative AI models are built and why they require such 
+significant investment. I wanted to explore not just the “how,” but also the “why”—why data matters, why compute 
+is expensive, and why optimization is critical in AI development.
+</p>
+</div>
+
+<div class="card">
+<h2>Interactive Training Pipeline</h2>
+<p>Click each step to explore what happens behind the scenes:</p>
+
+<div class="pipeline">
+    <div class="step" onclick="showInfo('Large datasets are collected from books, websites, and code repositories. The quality and diversity of this data strongly influence the model’s performance.')">Data Collection</div>
+    <div class="step" onclick="showInfo('The data is cleaned, filtered, and converted into tokens. This step removes noise and prepares the data for training.')">Preprocessing</div>
+    <div class="step" onclick="showInfo('The model learns patterns using neural networks and transformer architecture. This stage requires massive GPU clusters.')">Pretraining</div>
+    <div class="step" onclick="showInfo('Human feedback is used to refine responses, making the model safer and more aligned with user expectations.')">Fine-Tuning</div>
+    <div class="step" onclick="showInfo('The trained model is deployed through APIs and applications, where users can interact with it in real time.')">Deployment</div>
+</div>
+
+<p id="infoBox" style="margin-top:15px; font-weight:500;"></p>
+</div>
+
+<div class="card">
+<h2>Key Resources and Why They Matter</h2>
+<div class="grid">
+    <div><strong>📚 Data</strong><br>Trillions of words are needed. Better data → better understanding.</div>
+    <div><strong>💻 Compute</strong><br>Thousands of GPUs working in parallel. This is the most expensive part.</div>
+    <div><strong>⚡ Energy</strong><br>Training consumes large amounts of electricity, raising sustainability concerns.</div>
+    <div><strong>⏳ Time</strong><br>Training can take weeks or even months depending on model size.</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Cost Comparison (Real-World Estimates)</h2>
+<p>
+One of the most surprising things I learned is just how expensive it is to train these models. The chart below gives 
+a simplified comparison based on publicly discussed estimates:
+</p>
+<canvas id="chart"></canvas>
+</div>
+
+<div class="card">
+<h2>Process / Methodology</h2>
+<p>
+To create this artifact, I started by reviewing foundational materials on how large language models work. I then 
+organized the training process into clear stages and connected each stage with its resource requirements.
+</p>
+<p>
+From there, I focused on presenting the information visually and interactively. My goal was to move beyond a static 
+report and create something that invites exploration.
+</p>
+</div>
+
+<div class="card">
+<h2>Tools & Technologies Used</h2>
+<ul>
+<li>ChatGPT for research and structuring ideas</li>
+<li>HTML, CSS, JavaScript for development</li>
+<li>Chart.js for data visualization</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Value Proposition</h2>
+<p>
+This project simplifies a highly complex topic into something that is easier to understand and engage with. 
+It can be useful for students, professionals, and anyone curious about how modern AI systems are built.
+</p>
+</div>
+
+<div class="card">
+<h2>Unique Value</h2>
+<p>
+What makes this work different is its balance between technical depth and clarity. Instead of overwhelming the 
+reader, it focuses on explaining concepts in a way that feels intuitive and connected to real-world applications.
+</p>
+</div>
+
+<div class="card">
+<h2>Relevance to AI/ML Practice</h2>
+<p>
+Understanding the training process is essential for anyone working in AI/ML. It helps in making better decisions 
+about model selection, cost optimization, and ethical considerations such as bias and energy consumption.
+</p>
+</div>
+
+<div class="card">
+<h2>References</h2>
+<p>
+OpenAI. (2023). <i>How large language models work</i>.<br><br>
+Anthropic. (2023). <i>Claude: Technical overview</i>.<br><br>
+Touvron, H., et al. (2023). <i>LLaMA: Open and efficient foundation language models</i>. Meta AI.<br><br>
+Google DeepMind. (2024). <i>Gemini: A family of highly capable multimodal models</i>.
+</p>
+</div>
+
+</div>
+
+<footer>
+© 2026 | Generative AI Learning Project made by Gaurav Kumar Gupta
+</footer>
+
+<script>
+function toggleMode() {
+    document.body.classList.toggle("dark");
+}
+
+function showInfo(text) {
+    document.getElementById("infoBox").innerText = text;
+}
+
+const ctx = document.getElementById('chart');
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['GPT-4', 'Claude', 'LLaMA'],
+        datasets: [{
+            label: 'Estimated Training Cost (Million USD)',
+            data: [100, 80, 30]
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
