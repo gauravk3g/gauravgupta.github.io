@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explainable AI (XAI) Artifact</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: linear-gradient(to right, #eef2f3, #dfe9f3);
+        color: #333;
+    }
+
+    header {
+        background: linear-gradient(135deg, #1f4037, #99f2c8);
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+
+    header p {
+        margin-top: 10px;
+        font-size: 1.1em;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .card {
+        background: white;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    h2 {
+        color: #1f4037;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    .highlight {
+        background: #f0f8ff;
+        padding: 10px;
+        border-left: 5px solid #1f4037;
+        border-radius: 6px;
+    }
+
+    footer {
+        text-align: center;
+        background: #1f4037;
+        color: white;
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+        header h1 {
+            font-size: 1.8em;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <h1>🤖 Explainable AI (XAI)</h1>
+    <p>Challenges, Techniques & Trust in Modern AI Systems</p>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <h2>📘 Introduction</h2>
+        <p>
+            This project explores Explainable Artificial Intelligence (XAI), focusing on the growing need to make 
+            AI systems more transparent and understandable. As models like GPT, Claude, Gemini, and LLaMA become 
+            widely used, it is increasingly important to understand how they make decisions.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🧾 Description</h2>
+        <p>
+            This artifact provides a structured overview of explainable AI, including challenges, validation techniques, 
+            and modern interpretability methods. It presents complex ideas in a simplified, professional format suitable 
+            for both academic and practical use.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Objective</h2>
+        <p>
+            The objective is to highlight the importance of transparency in AI systems and demonstrate how validation 
+            and explainability techniques help improve trust, fairness, and accountability.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>⚙️ Process / Methodology</h2>
+        <ul>
+            <li>Conducted research on explainability challenges in AI models</li>
+            <li>Analyzed techniques like LIME, SHAP, and attention visualization</li>
+            <li>Reviewed validation methods such as cross-validation</li>
+            <li>Organized findings into structured content</li>
+            <li>Developed a modern HTML-based artifact</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>🛠️ Tools & Technologies Used</h2>
+        <ul>
+            <li>HTML5 & CSS3</li>
+            <li>Generative AI tools (ChatGPT)</li>
+            <li>Academic research resources</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>💡 Value Proposition</h2>
+        <div class="highlight">
+            This artifact simplifies complex AI concepts into an easy-to-understand format, helping users gain clarity 
+            on how AI systems operate and how trust can be established.
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🌟 Unique Value</h2>
+        <p>
+            This work bridges the gap between technical depth and readability. It not only explains AI concepts but also 
+            connects them to real-world implications in industries like banking, healthcare, and governance.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>📊 Relevance to AI/ML Practice</h2>
+        <p>
+            Explainability is essential in modern AI/ML workflows. Practitioners must ensure models are not only accurate 
+            but also interpretable and fair. This artifact demonstrates how validation and explainability techniques 
+            contribute to responsible AI development.
+        </p>
+    </div>
+
+<div class="card">
+<h2>📊 Validation Metrics Visualization</h2>
+<p>
+To better understand how AI models perform, I created a simple visual representation of key evaluation metrics. 
+These include accuracy, precision, recall, and F1 score. Instead of just reading about them, seeing them plotted 
+makes it easier to compare performance at a glance.
+</p>
+
+<canvas id="metricsChart" width="500" height="250"></canvas>
+
+<p>
+Each metric highlights a different aspect of performance. For example, accuracy gives an overall idea, while precision 
+and recall help uncover hidden issues like false positives or missed predictions.
+</p>
+</div>
+
+<div class="card">
+<h2>🤖 Model Comparison: GPT vs Claude vs Gemini</h2>
+<p>
+While working on this project, I found it interesting to compare how different large language models approach similar problems. 
+Even though they are all powerful, their strengths can vary depending on design choices and training strategies.
+</p>
+
+<table border="1" cellpadding="10" style="border-collapse: collapse; width:100%;">
+<tr>
+<th>Model</th>
+<th>Strengths</th>
+<th>Limitations</th>
+<th>Explainability</th>
+</tr>
+
+<tr>
+<td>GPT</td>
+<td>Strong reasoning, versatile, widely used</td>
+<td>Can still produce unclear reasoning in complex cases</td>
+<td>Supports chain-of-thought explanations</td>
+</tr>
+
+<tr>
+<td>Claude</td>
+<td>Safer outputs, strong alignment focus</td>
+<td>Sometimes overly cautious or verbose</td>
+<td>Emphasizes transparency and safer reasoning</td>
+</tr>
+
+<tr>
+<td>Gemini</td>
+<td>Multimodal capabilities, integrates with tools</td>
+<td>Performance varies across tasks</td>
+<td>Improving explainability with visual + text insights</td>
+</tr>
+
+</table>
+
+<p>
+From this comparison, it becomes clear that explainability is not handled the same way across models. Some focus more on safety, 
+while others emphasize flexibility or performance.
+</p>
+</div>
+
+  <div class="card">
+        <h2>📚 References</h2>
+        <ul>
+            <li>Goodfellow, I., Bengio, Y., & Courville, A. (2016). <i>Deep Learning</i>. MIT Press.</li>
+            <li>Molnar, C. (2022). <i>Interpretable Machine Learning</i>.</li>
+            <li>Ribeiro, M. T., Singh, S., & Guestrin, C. (2016).</li>
+            <li>Lundberg, S. M., & Lee, S. I. (2017).</li>
+            <li>OpenAI Documentation on AI Transparency</li>
+        </ul>
+    </div>
+
+
+</div>
+
+<script>
+const canvas = document.getElementById('metricsChart');
+const ctx = canvas.getContext('2d');
+
+const data = [88, 82, 79, 84];
+const labels = ['Accuracy', 'Precision', 'Recall', 'F1'];
+
+const barWidth = 60;
+const gap = 40;
+
+for (let i = 0; i < data.length; i++) {
+    let x = i * (barWidth + gap) + 40;
+    let y = 250 - data[i];
+
+    ctx.fillStyle = '#1f4037';
+    ctx.fillRect(x, y, barWidth, data[i]);
+
+    ctx.fillStyle = '#000';
+    ctx.fillText(labels[i], x, 240);
+    ctx.fillText(data[i], x + 10, y - 5);
+}
+</script>
+
+<footer>
+    <p>© 2026 Explainable AI Project | Academic Submission by Gaurav Kumar Gupta</p>
+</footer>
+
+</body>
+</html>
