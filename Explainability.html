@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Model Trade-Off Analysis</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        background: linear-gradient(135deg, #eef2ff, #fdfbfb);
+        color: #333;
+    }
+
+    header {
+        background: linear-gradient(135deg, #4f46e5, #06b6d4);
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+
+    header p {
+        margin-top: 10px;
+        font-size: 1.1em;
+        opacity: 0.9;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .card {
+        background: white;
+        margin-bottom: 25px;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    h2 {
+        color: #4f46e5;
+        margin-bottom: 10px;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    .highlight {
+        background: #eef2ff;
+        padding: 10px;
+        border-left: 5px solid #4f46e5;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: center;
+    }
+
+    th {
+        background: #4f46e5;
+        color: white;
+    }
+
+.filter-buttons {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.filter-buttons button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4f46e5;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.filter-buttons button:hover {
+    background-color: #06b6d4;
+}
+
+
+    tr:nth-child(even) {
+        background: #f9fafb;
+    }
+
+    .good { color: green; font-weight: bold; }
+    .mid { color: orange; font-weight: bold; }
+    .bad { color: red; font-weight: bold; }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #1f2937;
+        color: white;
+        margin-top: 40px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>AI Model Trade-Off Analysis</h1>
+    <p>Balancing Accuracy, Speed, and Size Across AI Domains</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+    <h2>Introduction</h2>
+    <p>
+        As I explored different AI models, I realized that selecting the “best” model is not as simple as picking the most accurate one.
+        Every model comes with trade-offs—some are powerful but slow, while others are fast but less precise.
+    </p>
+    <p>
+        This project focuses on understanding those trade-offs across NLP, computer vision, and tabular data models.
+        It helped me see how real-world AI decisions are made beyond just technical metrics.
+    </p>
+</div>
+
+<div class="card">
+    <h2>Description</h2>
+    <p>
+        This artifact compares five widely used models: GPT, BERT, MobileNet, EfficientNet, and XGBoost.
+        It includes a decision matrix and analysis based on:
+    </p>
+    <ul>
+        <li>Model Size (complexity and resource usage)</li>
+        <li>Accuracy (performance on benchmarks)</li>
+        <li>Speed (inference time)</li>
+        <li>Explainability (ease of understanding outputs)</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2>Objective</h2>
+    <p>
+        The goal of this work is to better understand how to choose the right AI model depending on the problem.
+        Instead of focusing only on performance, I wanted to consider real-world constraints like speed, cost, and interpretability.
+    </p>
+</div>
+
+
+<div class="card">
+    <h2>Filters</h2>
+    <p>Select a model to highlight in the charts:</p>
+    <div class="filter-buttons">
+        <button onclick="updateChart('all')">All Models</button>
+        <button onclick="updateChart('GPT')">GPT</button>
+        <button onclick="updateChart('BERT')">BERT</button>
+        <button onclick="updateChart('MobileNet')">MobileNet</button>
+        <button onclick="updateChart('EfficientNet')">EfficientNet</button>
+        <button onclick="updateChart('XGBoost')">XGBoost</button>
+    </div>
+</div>
+
+<div class="card">
+    <h2>Performance Charts</h2>
+    <canvas id="performanceChart" height="100"></canvas>
+</div>
+
+<div class="card">
+    <h2>Process / Methodology</h2>
+    <p>
+        I selected representative models from three domains and reviewed research papers, official documentation,
+        and real-world use cases. I then compared them using a structured framework and summarized the findings
+        into a decision matrix.
+    </p>
+    <div class="highlight">
+        Key Insight: The best model depends more on the use case than the benchmark score.
+    </div>
+</div>
+
+<div class="card">
+    <h2>Tools & Technologies Used</h2>
+    <ul>
+        <li>Machine Learning Concepts</li>
+        <li>Research Papers (BERT, GPT, EfficientNet)</li>
+        <li>Python (conceptual understanding)</li>
+        <li>HTML & CSS for visualization</li>
+    </ul>
+</div>
+
+<div class="card">
+    <h2>Decision Matrix</h2>
+
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Size</th>
+            <th>Accuracy</th>
+            <th>Speed</th>
+            <th>Explainability</th>
+        </tr>
+        <tr>
+            <td>GPT</td>
+            <td class="bad">Large</td>
+            <td class="good">High</td>
+            <td class="bad">Slow</td>
+            <td class="bad">Low</td>
+        </tr>
+        <tr>
+            <td>BERT</td>
+            <td class="mid">Medium</td>
+            <td class="good">High</td>
+            <td class="mid">Moderate</td>
+            <td class="mid">Medium</td>
+        </tr>
+        <tr>
+            <td>MobileNet</td>
+            <td class="good">Small</td>
+            <td class="mid">Moderate</td>
+            <td class="good">Fast</td>
+            <td class="mid">Medium</td>
+        </tr>
+        <tr>
+            <td>EfficientNet</td>
+            <td class="mid">Medium</td>
+            <td class="good">High</td>
+            <td class="mid">Moderate</td>
+            <td class="bad">Low</td>
+        </tr>
+        <tr>
+            <td>XGBoost</td>
+            <td class="good">Small</td>
+            <td class="good">High</td>
+            <td class="good">Fast</td>
+            <td class="good">High</td>
+        </tr>
+    </table>
+
+</div>
+
+<div class="card">
+    <h2>Value Proposition</h2>
+    <p>
+        This project provides a practical way to evaluate AI models beyond theory. It simplifies decision-making
+        by clearly showing trade-offs, which can help organizations choose the right model faster.
+    </p>
+</div>
+
+<div class="card">
+    <h2>Unique Value</h2>
+    <p>
+        What makes this work different is its focus on real-world usability. Instead of only comparing metrics,
+        it highlights how models behave in actual scenarios—something that is often overlooked.
+    </p>
+</div>
+
+<div class="card">
+    <h2>Relevance to AI/ML Practice</h2>
+    <p>
+        In industries like banking and healthcare, model selection must balance performance with explainability and speed.
+        This analysis reflects how professionals make those decisions in real-world projects.
+    </p>
+</div>
+
+<div class="card">
+    <h2>References</h2>
+    <ul>
+        <li>BERT (Devlin et al., 2019)</li>
+        <li>GPT (Brown et al., 2020)</li>
+        <li>EfficientNet (Tan & Le, 2019)</li>
+        <li>MobileNet (Howard et al., 2017)</li>
+        <li>XGBoost (Chen & Guestrin, 2016)</li>
+    </ul>
+</div>
+
+</div>
+
+<footer>
+    <p>© 2026 Gaurav Kumar Gupta | AI Portfolio</p>
+</footer>
+
+<script>
+const models = ["GPT", "BERT", "MobileNet", "EfficientNet", "XGBoost"];
+const accuracy = [95, 92, 80, 90, 93];   // Example values
+const speed = [40, 60, 90, 70, 95];      // Higher is faster
+const size = [90, 50, 20, 50, 25];       // Higher is larger
+
+const ctx = document.getElementById('performanceChart').getContext('2d');
+
+const chartData = {
+    labels: models,
+    datasets: [
+        {
+            label: 'Accuracy (%)',
+            data: accuracy,
+            backgroundColor: 'rgba(79, 70, 229, 0.7)'
+        },
+        {
+            label: 'Speed (%)',
+            data: speed,
+            backgroundColor: 'rgba(6, 182, 212, 0.7)'
+        },
+        {
+            label: 'Size (%)',
+            data: size,
+            backgroundColor: 'rgba(234, 88, 12, 0.7)'
+        }
+    ]
+};
+
+const performanceChart = new Chart(ctx, {
+    type: 'bar',
+    data: chartData,
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { position: 'top' },
+            tooltip: { mode: 'index', intersect: false }
+        },
+        scales: {
+            y: { beginAtZero: true, max: 100 }
+        },
+        animation: { duration: 1000 }
+    }
+});
+
+function updateChart(model) {
+    if (model === 'all') {
+        performanceChart.data.labels = models;
+        performanceChart.data.datasets[0].data = accuracy;
+        performanceChart.data.datasets[1].data = speed;
+        performanceChart.data.datasets[2].data = size;
+    } else {
+        performanceChart.data.labels = [model];
+        const idx = models.indexOf(model);
+        performanceChart.data.datasets[0].data = [accuracy[idx]];
+        performanceChart.data.datasets[1].data = [speed[idx]];
+        performanceChart.data.datasets[2].data = [size[idx]];
+    }
+    performanceChart.update();
+}
+</script>
+
+
+</body>
+</html>
